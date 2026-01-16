@@ -1,0 +1,32 @@
+xkb_keymap {
+    xkb_keycodes { include "evdev+aliases(qwerty)" };
+
+    xkb_types {
+        include "complete"
+
+        type "CAPS_SWITCH" {
+            modifiers = Shift+Control;
+            map[None] = Level1;
+            map[Shift] = Level2;
+            map[Control] = Level3;
+        };
+    };
+
+    xkb_compat { include "complete" };
+
+    xkb_symbols {
+        include "pc+us+ru:2+rs(latin):3+inet(evdev)"
+
+        name[Group1] = "English (US)";
+        name[Group2] = "Russian";
+        name[Group3] = "Serbian (Latin)";
+
+        replace key <CAPS> {
+            type = "CAPS_SWITCH",
+            symbols[Group1] = [ VoidSymbol, VoidSymbol, VoidSymbol ],
+            actions[Group1] = [ LockGroup(group=1), LockGroup(group=2), LockGroup(group=3) ]
+        };
+    };
+
+    xkb_geometry { include "pc(pc104)" };
+};

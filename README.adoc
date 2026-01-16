@@ -1,0 +1,7 @@
+= dotfiles
+
+Only desktop (niri, noctalia, etc) files are located here, everything else (installed packages, neovim etc) is defined in nixos configuration which I don't share due to reasons.
+
+Things like this get a special treatment, since they would like to edit their own files and usually configured though gui
+
+Git history will be rewritten sometimes, because I want to use jujutsu, jujutsu doesn't support git lfs, and I want to keep large files here.

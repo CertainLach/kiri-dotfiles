@@ -1,0 +1,4 @@
+# Dev files
+/config-debug.kdl
+# Per-machine quick overrides
+/machine.kdl
